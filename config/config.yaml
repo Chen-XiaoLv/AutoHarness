@@ -1,0 +1,83 @@
+model:
+  provider: "openai"
+  base_url: "https://api.xiaomimimo.com/v1"
+  api_key: "sk-c61yq65rikst7cavlbi29fptekl1xz1fm2u0vo41keibhrjs"
+  executor_model: "mimo-v2.5"
+  critic_model: "mimo-v2.5"
+  evolver_model: "mimo-v2.5-pro"
+  temperature: 0
+  timeout: 120  # 全局 API 超时时间（秒）
+  classify_timeout: 300  # 分类模型超时时间（秒），classify 需要处理大量 bad case
+
+path:
+  out_dir: "outputs/"
+  executor_dir: "Executor/"
+  critic_dir: "Critic/"
+  evolver_dir: "Evolver/"
+  candidates_dir: "Candidates/"
+  gate_dir: "Gate/"
+  gsm_train: "data/gsm8k/gsm8k_train.jsonl"
+  gsm_test: "data/gsm8k/gsm8k_test.jsonl"
+  searchqa_train: "data/searchqa/train.jsonl"
+  searchqa_test: "data/searchqa/test.jsonl"
+
+# 数据集配置
+contract:
+  searchqa: "auto_outputs/TASK_Contract.md"
+
+dataset:
+  # 当前使用的数据集，可选: gsm8k, searchqa
+  active: "searchqa"
+  gsm8k:
+    train: "data/gsm8k/gsm8k_train.jsonl"
+    test: "data/gsm8k/gsm8k_test.jsonl"
+  searchqa:
+    train: "data/searchqa/train.jsonl"
+    test: "data/searchqa/test.jsonl"
+    train_pool: "data/searchqa/train_pool.jsonl"
+    dev_gate: "data/searchqa/dev_gate.jsonl"
+    test_pool: "data/searchqa/test_pool.jsonl"
+  soccer:
+    train: "data/soccer/train.jsonl"
+    test: "data/soccer/test.jsonl"
+    dev_gate: "data/soccer/dev.jsonl"
+    test_pool: "data/soccer/test.jsonl"
+
+agents:
+  executor_prompt: "Agent/Executor/AGENT.md"
+  critic_prompt: "Agent/Critic/AGENT.md"
+  evolver_prompt: "Agent/Evolver/AGENT.md"
+  skills_dir: "Agent/Executor/Skills/"
+
+autoharness:
+  max_plan_rounds: 3  # Plan Agent 最大迭代轮数（系统总上限）
+
+evolution:
+  max_rounds: 20
+  stop_if_no_improvement_rounds: 5  # 连续 N 轮无提升则早停，0 表示不早停
+  seed: 42
+  train_pool_size: 2000     # 从 train.jsonl 初始采样数量作为 train_pool
+  train_sample_size: 300   # 每轮从 train_pool 采样数量；null 表示全量
+  sample_ratio: null        # 数据集采样比例（用于快速测试），null 表示全量
+  max_total_edits: 3       # Critic→Evolver 聚合后的最大 edit 数量
+  dev_decay_factor: 0.85    # Gate dev 阈值衰减因子，每轮 threshold *= decay
+
+critic:
+  minibatch_size: 16
+  edit_budget: 2
+  seed: 42
+
+gate:
+  dev_improve_threshold: 0.005
+  memory_sample_size: 100  # Gate 验证时从 memory set 中抽样的数量
+  memory_threshold: 0.70   # 候选 skill 在 memory set 上的 EM 要求
+
+dashboard:
+  port: 8501
+  auto_refresh: true
+  refresh_interval: 5
+
+logging:
+  level: "INFO"
+  file: "logs/harness.log"
+  events_file: "outputs/events.jsonl"
