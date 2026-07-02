@@ -1,0 +1,30 @@
+{
+  "Neutral": {
+    "em": 46.88,
+    "f1": 56.62,
+    "sub_em": 62.5,
+    "n_samples": 32,
+    "n_errors": 0
+  },
+  "H1": {
+    "em": 59.38,
+    "f1": 69.52,
+    "sub_em": 75.0,
+    "n_samples": 32,
+    "n_errors": 0
+  },
+  "H2": {
+    "em": 56.25,
+    "f1": 67.7,
+    "sub_em": 75.0,
+    "n_samples": 32,
+    "n_errors": 0
+  },
+  "H3": {
+    "em": 50.0,
+    "f1": 58.24,
+    "sub_em": 62.5,
+    "n_samples": 32,
+    "n_errors": 0
+  }
+}

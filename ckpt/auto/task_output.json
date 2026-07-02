@@ -1,0 +1,126 @@
+{
+  "observations": [
+    {
+      "id": "O1",
+      "statement": "每个问题都是一个陈述句或短语，描述一个特定实体、事件或概念，包含如专有名词、特征或上下文线索。",
+      "sample_ids": [
+        "sample_001",
+        "sample_002",
+        "sample_003",
+        "sample_004"
+      ]
+    },
+    {
+      "id": "O2",
+      "statement": "答案都是简短的名词短语、术语或数字，如人名、药物名、动物名或年份。",
+      "sample_ids": [
+        "sample_001",
+        "sample_005",
+        "sample_009",
+        "sample_016"
+      ]
+    },
+    {
+      "id": "O3",
+      "statement": "问题中的描述直接关联到答案实体，例如通过定义、特征或历史事件提示。",
+      "sample_ids": [
+        "sample_001",
+        "sample_006",
+        "sample_010",
+        "sample_015"
+      ]
+    },
+    {
+      "id": "O4",
+      "statement": "答案需要特定领域知识或常识，如医学、历史、流行文化或自然世界。",
+      "sample_ids": [
+        "sample_001",
+        "sample_008",
+        "sample_012",
+        "sample_014"
+      ]
+    }
+  ],
+  "task_understanding": {
+    "input_semantics": "输入是问题或描述性语句，通常以陈述形式呈现，暗示一个特定的实体、术语或概念，包含线索如名称、特征或上下文。",
+    "output_semantics": "输出是答案实体的名称、标识或简短短语，如专有名词、术语或数字。",
+    "relation": "输入描述输出，输出是输入中所描述事物的识别、名称或答案，基于线索匹配或知识推理。"
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "task_type": "实体识别",
+      "hypothesis": "输入是对一个实体的描述，输出是该实体的名称或标识。任务是根据描述中的线索，准确识别被描述的对象，类似于从描述中提取实体名称。",
+      "input_output_relation": "输出是输入描述的对象名称，输入提供定义或特征，输出是标准名称。",
+      "executor_instruction": "You are an expert in identifying entities based on descriptions. Given a descriptive statement about an entity (such as a person, place, thing, or concept), your task is to identify what is being described and provide the entity name or identifier as the answer. Use the clues in the description to determine the correct entity. Output your reasoning, then put the final answer inside <answer>...</answer> tags. The answer should be a short phrase or name.",
+      "supporting_evidence": [
+        {
+          "statement": "问题包含显式描述线索，如'abortion pill'对应药物RU-486，'birds return annually'对应storks。",
+          "observation_ids": [
+            "O1",
+            "O3"
+          ]
+        }
+      ],
+      "testable_predictions": [
+        "在隐藏Probe Set上，如果描述清晰且指向唯一实体，应能准确输出实体名称。",
+        "对于描述模糊或多个实体匹配的情况，输出可能错误或不确定。"
+      ],
+      "falsification_conditions": [
+        "如果大多数问题不涉及实体描述（如更抽象的概念），或答案不是实体名称，应降低该假设置信度。",
+        "如果Executor在测试中频繁将非实体描述错误识别为实体，表明假设不成立。"
+      ],
+      "prior_confidence": 0.34
+    },
+    {
+      "id": "H2",
+      "task_type": "事实问答",
+      "hypothesis": "输入是事实性问题或陈述，需要世界知识来回答。输出是问题的正确答案，基于常识、历史或领域知识检索，而非仅从描述中提取。",
+      "input_output_relation": "输出是输入问题的事实答案，输入是问题形式，输出是检索到的事实。",
+      "executor_instruction": "You are a knowledgeable assistant that answers fact-based questions. Given a question or statement that requires factual knowledge, use your internal knowledge base to provide the correct and concise answer. The answer should be accurate and directly respond to the query. Output your reasoning, then put the final answer inside <answer>...</answer> tags.",
+      "supporting_evidence": [
+        {
+          "statement": "答案需要特定领域知识，如RU-486是药物、Anwar Sadat是历史人物、beriberi是疾病名称。",
+          "observation_ids": [
+            "O4",
+            "O2"
+          ]
+        }
+      ],
+      "testable_predictions": [
+        "在隐藏Probe Set上，对于涉及常见事实的问题，应能输出正确答案。",
+        "对于冷门或需要推理的事实，输出可能依赖Executor的知识广度。"
+      ],
+      "falsification_conditions": [
+        "如果问题更侧重于描述匹配而非事实查询，或答案不依赖世界知识，应降低该假设置信度。",
+        "如果Executor在测试中频繁检索错误事实，表明假设可能不成立。"
+      ],
+      "prior_confidence": 0.33
+    },
+    {
+      "id": "H3",
+      "task_type": "术语匹配",
+      "hypothesis": "输入是对一个术语或概念的描述，输出是该术语的标准名称。任务是根据描述匹配到已知术语，强调术语定义或分类，而非一般实体识别。",
+      "input_output_relation": "输出是输入描述的术语名称，输入提供定义或上下文，输出是标准术语。",
+      "executor_instruction": "You are an expert in terminology and concept identification. Given a descriptive phrase or statement that defines or describes a term, identify the exact term or concept being referred to and provide its standard name. Focus on matching the description to a known term in fields like science, history, or culture. Output your reasoning, then put the final answer inside <answer>...</answer> tags. The answer should be the precise term.",
+      "supporting_evidence": [
+        {
+          "statement": "答案包括术语如'no man's land'、'menopause'、'sacrifice'，这些是定义或概念性术语。",
+          "observation_ids": [
+            "O2",
+            "O3"
+          ]
+        }
+      ],
+      "testable_predictions": [
+        "在隐藏Probe Set上，对于描述术语或概念的问题，应能输出正确术语。",
+        "对于非术语性描述，输出可能不准确。"
+      ],
+      "falsification_conditions": [
+        "如果大多数问题不涉及术语定义，或答案更偏向实体而非术语，应降低该假设置信度。",
+        "如果Executor将术语描述错误匹配到非标准名称，表明假设可能不成立。"
+      ],
+      "prior_confidence": 0.33
+    }
+  ]
+}
