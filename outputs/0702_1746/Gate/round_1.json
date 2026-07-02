@@ -1,0 +1,16 @@
+{
+  "round": 1,
+  "dev_threshold": 0.005,
+  "current_dev_em": 0.7441860465116279,
+  "current_dev_f1": 0.8246630888491354,
+  "candidate_dev_em": 0.7116279069767442,
+  "candidate_dev_f1": 0.7942090467671861,
+  "memory_size": 1905,
+  "memory_sample_n": 100,
+  "candidate_memory_em": 0.93,
+  "memory_threshold": 0.7,
+  "memory_ok": true,
+  "accepted": false,
+  "has_prompt": false,
+  "has_skills": true
+}

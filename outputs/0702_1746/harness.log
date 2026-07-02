@@ -1,0 +1,200 @@
+2026-07-02 17:49:24,862 | INFO | Loop started: 0702_1749, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 17:49:24,862 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 17:49:24,863 | INFO | [loop_start] loop=0702_1749 round=None agent=None case=None
+2026-07-02 17:51:30,198 | INFO | [test_eval] loop=0702_1749 round=0 agent=None case=None
+2026-07-02 17:51:30,216 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 17:51:30,224 | INFO | [round_start] loop=0702_1749 round=1 agent=None case=None
+2026-07-02 17:55:42,989 | INFO | [executor_done] loop=0702_1749 round=1 agent=executor case=None
+2026-07-02 17:57:16,077 | INFO | [critic_done] loop=0702_1749 round=1 agent=critic case=None
+2026-07-02 17:57:16,093 | INFO | [aggregate_done] loop=0702_1749 round=1 agent=None case=None
+2026-07-02 17:57:51,216 | INFO | [evolver_done] loop=0702_1749 round=1 agent=evolver case=None
+2026-07-02 18:04:05,128 | INFO | [gate_decision] loop=0702_1749 round=1 agent=None case=None
+2026-07-02 18:04:05,130 | INFO | GATE REJECTED (consecutive: 1)
+2026-07-02 18:04:05,137 | INFO | [round_end] loop=0702_1749 round=1 agent=None case=None
+2026-07-02 18:04:35,079 | INFO | [planner_decision] loop=0702_1749 round=1 agent=None case=None
+2026-07-02 18:04:35,080 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 18:04:35,088 | INFO | [loop_end] loop=0702_1749 round=None agent=None case=None
+2026-07-02 18:04:35,088 | INFO | Loop finished: 0702_1749
+2026-07-02 18:05:05,751 | INFO | Loop started: 0702_1805, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 18:05:05,751 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 18:05:05,759 | INFO | [loop_start] loop=0702_1805 round=None agent=None case=None
+2026-07-02 18:07:14,445 | INFO | [test_eval] loop=0702_1805 round=0 agent=None case=None
+2026-07-02 18:07:14,452 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 18:07:14,459 | INFO | [round_start] loop=0702_1805 round=1 agent=None case=None
+2026-07-02 18:10:24,275 | INFO | [executor_done] loop=0702_1805 round=1 agent=executor case=None
+2026-07-02 18:11:34,472 | INFO | [critic_done] loop=0702_1805 round=1 agent=critic case=None
+2026-07-02 18:11:34,492 | INFO | [aggregate_done] loop=0702_1805 round=1 agent=None case=None
+2026-07-02 18:12:07,568 | INFO | [evolver_done] loop=0702_1805 round=1 agent=evolver case=None
+2026-07-02 18:18:38,609 | INFO | [gate_decision] loop=0702_1805 round=1 agent=None case=None
+2026-07-02 18:18:38,633 | INFO | GATE ACCEPTED (dev: 65.12% -> 66.98%, memory: 90.00% >= 70.00%)
+2026-07-02 18:18:38,643 | INFO | [round_end] loop=0702_1805 round=1 agent=None case=None
+2026-07-02 18:19:11,178 | INFO | [planner_decision] loop=0702_1805 round=1 agent=None case=None
+2026-07-02 18:19:11,180 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 18:19:11,188 | INFO | [loop_end] loop=0702_1805 round=None agent=None case=None
+2026-07-02 18:19:11,188 | INFO | Loop finished: 0702_1805
+2026-07-02 18:20:18,396 | INFO | Loop started: 0702_1820, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 18:20:18,396 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 18:20:18,404 | INFO | [loop_start] loop=0702_1820 round=None agent=None case=None
+2026-07-02 18:23:20,034 | INFO | [test_eval] loop=0702_1820 round=0 agent=None case=None
+2026-07-02 18:23:20,060 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 18:23:20,069 | INFO | [round_start] loop=0702_1820 round=1 agent=None case=None
+2026-07-02 18:26:29,558 | INFO | [executor_done] loop=0702_1820 round=1 agent=executor case=None
+2026-07-02 18:27:37,631 | INFO | [critic_done] loop=0702_1820 round=1 agent=critic case=None
+2026-07-02 18:27:37,651 | INFO | [aggregate_done] loop=0702_1820 round=1 agent=None case=None
+2026-07-02 18:28:38,313 | INFO | [evolver_done] loop=0702_1820 round=1 agent=evolver case=None
+2026-07-02 18:36:03,520 | INFO | [gate_decision] loop=0702_1820 round=1 agent=None case=None
+2026-07-02 18:36:03,533 | INFO | GATE ACCEPTED (dev: 35.81% -> 65.12%, memory: 87.00% >= 70.00%)
+2026-07-02 18:36:03,545 | INFO | [round_end] loop=0702_1820 round=1 agent=None case=None
+2026-07-02 18:36:34,644 | INFO | [planner_decision] loop=0702_1820 round=1 agent=None case=None
+2026-07-02 18:36:34,646 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 18:36:34,656 | INFO | [loop_end] loop=0702_1820 round=None agent=None case=None
+2026-07-02 18:36:34,656 | INFO | Loop finished: 0702_1820
+2026-07-02 18:37:50,792 | INFO | Loop started: 0702_1837, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 18:37:50,792 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 18:37:50,804 | INFO | [loop_start] loop=0702_1837 round=None agent=None case=None
+2026-07-02 18:39:39,949 | INFO | [test_eval] loop=0702_1837 round=0 agent=None case=None
+2026-07-02 18:39:39,968 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 18:39:39,976 | INFO | [round_start] loop=0702_1837 round=1 agent=None case=None
+2026-07-02 18:42:27,981 | INFO | [executor_done] loop=0702_1837 round=1 agent=executor case=None
+2026-07-02 18:43:42,122 | INFO | [critic_done] loop=0702_1837 round=1 agent=critic case=None
+2026-07-02 18:43:42,141 | INFO | [aggregate_done] loop=0702_1837 round=1 agent=None case=None
+2026-07-02 18:44:37,054 | INFO | [evolver_done] loop=0702_1837 round=1 agent=evolver case=None
+2026-07-02 18:49:01,786 | INFO | [gate_decision] loop=0702_1837 round=1 agent=None case=None
+2026-07-02 18:49:01,788 | INFO | GATE REJECTED (consecutive: 1)
+2026-07-02 18:49:01,795 | INFO | [round_end] loop=0702_1837 round=1 agent=None case=None
+2026-07-02 18:49:41,214 | INFO | [planner_decision] loop=0702_1837 round=1 agent=None case=None
+2026-07-02 18:49:41,216 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 18:49:41,224 | INFO | [loop_end] loop=0702_1837 round=None agent=None case=None
+2026-07-02 18:49:41,224 | INFO | Loop finished: 0702_1837
+2026-07-02 19:10:03,681 | INFO | Loop started: 0702_1910, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 19:10:03,681 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 19:10:03,689 | INFO | [loop_start] loop=0702_1910 round=None agent=None case=None
+2026-07-02 19:12:26,291 | INFO | [test_eval] loop=0702_1910 round=0 agent=None case=None
+2026-07-02 19:12:26,310 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 19:12:26,325 | INFO | [round_start] loop=0702_1910 round=1 agent=None case=None
+2026-07-02 19:15:49,477 | INFO | [executor_done] loop=0702_1910 round=1 agent=executor case=None
+2026-07-02 19:16:57,054 | INFO | [critic_done] loop=0702_1910 round=1 agent=critic case=None
+2026-07-02 19:16:57,074 | INFO | [aggregate_done] loop=0702_1910 round=1 agent=None case=None
+2026-07-02 19:17:43,525 | INFO | [evolver_done] loop=0702_1910 round=1 agent=evolver case=None
+2026-07-02 19:22:28,714 | INFO | [gate_decision] loop=0702_1910 round=1 agent=None case=None
+2026-07-02 19:22:28,739 | INFO | GATE ACCEPTED (dev: 70.23% -> 71.16%, memory: 92.00% >= 70.00%)
+2026-07-02 19:22:28,750 | INFO | [round_end] loop=0702_1910 round=1 agent=None case=None
+2026-07-02 19:23:12,617 | INFO | [planner_decision] loop=0702_1910 round=1 agent=None case=None
+2026-07-02 19:23:12,620 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 19:23:12,628 | INFO | [loop_end] loop=0702_1910 round=None agent=None case=None
+2026-07-02 19:23:12,628 | INFO | Loop finished: 0702_1910
+2026-07-02 19:24:39,480 | INFO | Loop started: 0702_1924, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 19:24:39,481 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 19:24:39,489 | INFO | [loop_start] loop=0702_1924 round=None agent=None case=None
+2026-07-02 19:26:30,698 | INFO | [test_eval] loop=0702_1924 round=0 agent=None case=None
+2026-07-02 19:26:30,716 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 19:26:30,724 | INFO | [round_start] loop=0702_1924 round=1 agent=None case=None
+2026-07-02 19:29:32,430 | INFO | [executor_done] loop=0702_1924 round=1 agent=executor case=None
+2026-07-02 19:30:29,115 | INFO | [critic_done] loop=0702_1924 round=1 agent=critic case=None
+2026-07-02 19:30:29,133 | INFO | [aggregate_done] loop=0702_1924 round=1 agent=None case=None
+2026-07-02 19:30:57,949 | INFO | [evolver_done] loop=0702_1924 round=1 agent=evolver case=None
+2026-07-02 19:38:13,546 | INFO | [gate_decision] loop=0702_1924 round=1 agent=None case=None
+2026-07-02 19:38:13,548 | INFO | GATE REJECTED (consecutive: 1)
+2026-07-02 19:38:13,554 | INFO | [round_end] loop=0702_1924 round=1 agent=None case=None
+2026-07-02 19:38:42,398 | INFO | [planner_decision] loop=0702_1924 round=1 agent=None case=None
+2026-07-02 19:38:42,400 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 19:38:42,407 | INFO | [loop_end] loop=0702_1924 round=None agent=None case=None
+2026-07-02 19:38:42,407 | INFO | Loop finished: 0702_1924
+2026-07-02 19:40:04,388 | INFO | Loop started: 0702_1940, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 19:40:04,388 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 19:40:04,395 | INFO | [loop_start] loop=0702_1940 round=None agent=None case=None
+2026-07-02 19:42:50,949 | INFO | [test_eval] loop=0702_1940 round=0 agent=None case=None
+2026-07-02 19:42:50,968 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 19:42:50,975 | INFO | [round_start] loop=0702_1940 round=1 agent=None case=None
+2026-07-02 19:45:49,064 | INFO | [executor_done] loop=0702_1940 round=1 agent=executor case=None
+2026-07-02 19:46:58,719 | INFO | [critic_done] loop=0702_1940 round=1 agent=critic case=None
+2026-07-02 19:46:58,738 | INFO | [aggregate_done] loop=0702_1940 round=1 agent=None case=None
+2026-07-02 19:48:04,504 | INFO | [evolver_done] loop=0702_1940 round=1 agent=evolver case=None
+2026-07-02 19:52:36,023 | INFO | [gate_decision] loop=0702_1940 round=1 agent=None case=None
+2026-07-02 19:52:36,036 | INFO | GATE ACCEPTED (dev: 69.77% -> 72.56%, memory: 95.00% >= 70.00%)
+2026-07-02 19:52:36,046 | INFO | [round_end] loop=0702_1940 round=1 agent=None case=None
+2026-07-02 19:53:10,033 | INFO | [planner_decision] loop=0702_1940 round=1 agent=None case=None
+2026-07-02 19:53:10,035 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 19:53:10,041 | INFO | [loop_end] loop=0702_1940 round=None agent=None case=None
+2026-07-02 19:53:10,042 | INFO | Loop finished: 0702_1940
+2026-07-02 19:54:31,961 | INFO | Loop started: 0702_1954, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 19:54:31,961 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 19:54:31,969 | INFO | [loop_start] loop=0702_1954 round=None agent=None case=None
+2026-07-02 19:56:15,231 | INFO | [test_eval] loop=0702_1954 round=0 agent=None case=None
+2026-07-02 19:56:15,248 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 19:56:15,256 | INFO | [round_start] loop=0702_1954 round=1 agent=None case=None
+2026-07-02 19:59:19,837 | INFO | [executor_done] loop=0702_1954 round=1 agent=executor case=None
+2026-07-02 20:00:22,874 | INFO | [critic_done] loop=0702_1954 round=1 agent=critic case=None
+2026-07-02 20:00:22,894 | INFO | [aggregate_done] loop=0702_1954 round=1 agent=None case=None
+2026-07-02 20:02:02,212 | INFO | [evolver_done] loop=0702_1954 round=1 agent=evolver case=None
+2026-07-02 20:06:29,171 | INFO | [gate_decision] loop=0702_1954 round=1 agent=None case=None
+2026-07-02 20:06:29,173 | INFO | GATE REJECTED (consecutive: 1)
+2026-07-02 20:06:29,179 | INFO | [round_end] loop=0702_1954 round=1 agent=None case=None
+2026-07-02 20:07:10,741 | INFO | [planner_decision] loop=0702_1954 round=1 agent=None case=None
+2026-07-02 20:07:10,743 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 20:07:10,750 | INFO | [loop_end] loop=0702_1954 round=None agent=None case=None
+2026-07-02 20:07:10,750 | INFO | Loop finished: 0702_1954
+2026-07-02 20:08:43,398 | INFO | Loop started: 0702_2008, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 20:08:43,398 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 20:08:43,405 | INFO | [loop_start] loop=0702_2008 round=None agent=None case=None
+2026-07-02 20:10:41,652 | INFO | [test_eval] loop=0702_2008 round=0 agent=None case=None
+2026-07-02 20:10:41,671 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 20:10:41,679 | INFO | [round_start] loop=0702_2008 round=1 agent=None case=None
+2026-07-02 20:15:15,851 | INFO | [executor_done] loop=0702_2008 round=1 agent=executor case=None
+2026-07-02 20:16:13,167 | INFO | [critic_done] loop=0702_2008 round=1 agent=critic case=None
+2026-07-02 20:16:13,185 | INFO | [aggregate_done] loop=0702_2008 round=1 agent=None case=None
+2026-07-02 20:16:52,346 | INFO | [evolver_done] loop=0702_2008 round=1 agent=evolver case=None
+2026-07-02 20:21:52,711 | INFO | [gate_decision] loop=0702_2008 round=1 agent=None case=None
+2026-07-02 20:21:52,713 | INFO | GATE REJECTED (consecutive: 1)
+2026-07-02 20:21:52,719 | INFO | [round_end] loop=0702_2008 round=1 agent=None case=None
+2026-07-02 20:22:31,405 | INFO | [planner_decision] loop=0702_2008 round=1 agent=None case=None
+2026-07-02 20:22:31,408 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 20:22:31,415 | INFO | [loop_end] loop=0702_2008 round=None agent=None case=None
+2026-07-02 20:22:31,415 | INFO | Loop finished: 0702_2008
+2026-07-02 20:23:42,174 | INFO | Loop started: 0702_2023, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 20:23:42,174 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 20:23:42,182 | INFO | [loop_start] loop=0702_2023 round=None agent=None case=None
+2026-07-02 20:25:16,142 | INFO | [test_eval] loop=0702_2023 round=0 agent=None case=None
+2026-07-02 20:25:16,149 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 20:25:16,157 | INFO | [round_start] loop=0702_2023 round=1 agent=None case=None
+2026-07-02 20:28:12,521 | INFO | [executor_done] loop=0702_2023 round=1 agent=executor case=None
+2026-07-02 20:29:42,768 | INFO | [critic_done] loop=0702_2023 round=1 agent=critic case=None
+2026-07-02 20:29:42,786 | INFO | [aggregate_done] loop=0702_2023 round=1 agent=None case=None
+2026-07-02 20:30:30,644 | INFO | [evolver_done] loop=0702_2023 round=1 agent=evolver case=None
+2026-07-02 20:36:28,916 | INFO | [gate_decision] loop=0702_2023 round=1 agent=None case=None
+2026-07-02 20:36:28,930 | INFO | GATE ACCEPTED (dev: 69.77% -> 74.88%, memory: 93.00% >= 70.00%)
+2026-07-02 20:36:28,940 | INFO | [round_end] loop=0702_2023 round=1 agent=None case=None
+2026-07-02 20:37:00,958 | INFO | [planner_decision] loop=0702_2023 round=1 agent=None case=None
+2026-07-02 20:37:00,960 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 20:37:00,967 | INFO | [loop_end] loop=0702_2023 round=None agent=None case=None
+2026-07-02 20:37:00,967 | INFO | Loop finished: 0702_2023
+2026-07-02 20:38:24,599 | INFO | Loop started: 0702_2038, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 20:38:24,599 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 20:38:24,608 | INFO | [loop_start] loop=0702_2038 round=None agent=None case=None
+2026-07-02 20:42:12,916 | INFO | [test_eval] loop=0702_2038 round=0 agent=None case=None
+2026-07-02 20:42:12,923 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 20:42:12,932 | INFO | [round_start] loop=0702_2038 round=1 agent=None case=None
+2026-07-02 20:45:36,155 | INFO | [executor_done] loop=0702_2038 round=1 agent=executor case=None
+2026-07-02 20:46:55,535 | INFO | [critic_done] loop=0702_2038 round=1 agent=critic case=None
+2026-07-02 20:46:55,550 | INFO | [aggregate_done] loop=0702_2038 round=1 agent=None case=None
+2026-07-02 20:47:46,782 | INFO | [evolver_done] loop=0702_2038 round=1 agent=evolver case=None
+2026-07-02 20:52:53,356 | INFO | [gate_decision] loop=0702_2038 round=1 agent=None case=None
+2026-07-02 20:52:53,357 | INFO | GATE REJECTED (consecutive: 1)
+2026-07-02 20:52:53,364 | INFO | [round_end] loop=0702_2038 round=1 agent=None case=None
+2026-07-02 20:53:17,377 | INFO | [planner_decision] loop=0702_2038 round=1 agent=None case=None
+2026-07-02 20:53:17,380 | INFO | Skills consolidated into E:\Tace项目\outputs\0702_1746\SkillOpt\skillopt.md
+2026-07-02 20:53:17,387 | INFO | [loop_end] loop=0702_2038 round=None agent=None case=None
+2026-07-02 20:53:17,387 | INFO | Loop finished: 0702_2038
+2026-07-02 20:54:37,320 | INFO | Loop started: 0702_2054, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 20:54:37,320 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 20:54:37,328 | INFO | [loop_start] loop=0702_2054 round=None agent=None case=None
+2026-07-02 20:56:35,354 | INFO | [test_eval] loop=0702_2054 round=0 agent=None case=None
+2026-07-02 20:56:35,373 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 20:56:35,381 | INFO | [round_start] loop=0702_2054 round=1 agent=None case=None
+2026-07-02 21:01:20,272 | INFO | [executor_done] loop=0702_2054 round=1 agent=executor case=None
+2026-07-02 21:02:32,611 | INFO | [critic_done] loop=0702_2054 round=1 agent=critic case=None
+2026-07-02 21:02:32,631 | INFO | [aggregate_done] loop=0702_2054 round=1 agent=None case=None
+2026-07-02 21:03:06,055 | INFO | [evolver_done] loop=0702_2054 round=1 agent=evolver case=None
+2026-07-02 21:08:41,207 | INFO | [gate_decision] loop=0702_2054 round=1 agent=None case=None
+2026-07-02 21:08:41,208 | INFO | GATE REJECTED (consecutive: 1)
+2026-07-02 21:08:41,217 | INFO | [round_end] loop=0702_2054 round=1 agent=None case=None

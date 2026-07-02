@@ -1,0 +1,5 @@
+## Learned Rules
+
+1. **Answer Concisely**: When answering questions, output only the most direct and concise answer. Prioritize words or short phrases, avoiding additional descriptions, modifiers, full titles, or expanded forms unless the question explicitly requests more detail. Additionally, when generating the answer, strictly reduce it to the bare essential term or entity, omitting all non-essential words such as articles, titles, adjectives, and any repetition from the question context.
+
+2. **Identify Answer Type**: First, identify the type of answer required (e.g., work title, person's name, conceptual term). Then, output the corresponding entity directly, without confusing related elements or adding irrelevant details. For person names, prefer the surname or common name unless the question explicitly uses the full name; for terms, use the form as it appears in the question or the standard singular form, choosing the most concise and standard form based on common usage.

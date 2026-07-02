@@ -1,0 +1,6 @@
+{"category": "task_misunderstanding", "question": "Anatomically, dorsal is the opposite of ventral & this is the opposite of anterior", "answer": "Posterior"}
+{"category": "wrong_granularity", "question": "From Paris' Royal Saint-Honore Hotel, walk 1/2 mile down Rue Saint-Honore, turn right & walk into its glass pyramid", "answer": "The Louvre"}
+{"category": "copy_question", "question": "A Rocky Life", "answer": "Sylvester Stallone"}
+{"category": "format_error", "question": "In the 1920s & 1930s, he collaborated with director Luis Bunuel to make 2 surrealist films", "answer": "Salvador Dali"}
+{"category": "verbose_answer", "question": "No C-section?  Little or no drugs?  Then the childbirth was this, aptly from the Latin for \"birth", "answer": "natural"}
+{"category": "type_or_language_error", "question": "Listen!  Up in the attic!  It must be Mr. Rochester's first wife!--in this 1847 novel", "answer": "Jane Eyre"}

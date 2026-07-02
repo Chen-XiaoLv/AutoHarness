@@ -1,0 +1,209 @@
+[
+  {
+    "id": "H1",
+    "task_type": "知识检索式问答",
+    "hypothesis": "核心任务是基于问题提供的线索，从一个外部知识库中检索并返回最匹配的实体名称。输入（question）是指引检索的查询，输出（answer）是知识库中被检索到的条目。category字段可能用于限定检索范围或选择知识库。",
+    "input_output_relation": "输入是指向特定知识条目的模糊指针或检索线索，输出是该知识条目的唯一标识（实体名称）。",
+    "execution_strategy": "将问题和可选的category作为查询，利用模型的知识库进行检索，直接生成最可能的实体名称作为答案。",
+    "executor_instruction": "根据以下线索问题（以及可能的分类），给出最符合描述的答案实体。只输出实体名称，无需解释。",
+    "supporting_evidence": [
+      {
+        "statement": "评估指标（EM）强烈要求输出与预设答案完全一致，这符合检索任务中答案来自固定词汇表的特征。",
+        "observation_ids": [
+          "O3"
+        ],
+        "evidence_strength": "strong"
+      },
+      {
+        "statement": "样本答案是高度具体的专有名词（如RU-486, storks）或特定短语，更像是预定义知识库的条目，而非开放生成的文本。",
+        "observation_ids": [
+          "O1"
+        ],
+        "evidence_strength": "strong"
+      }
+    ],
+    "assumptions": [
+      "模型具有访问相关知识库的能力或其参数中已编码足够多的相关知识。"
+    ],
+    "uncertainties": [
+      "知识库的具体范围和内容未知。"
+    ],
+    "testable_predictions": [
+      {
+        "prediction": "如果任务是知识检索，那么提供准确的category信息应能显著提高模型检索到正确答案的概率。",
+        "suggested_test": "使用同一批测试样本，对比模型在仅给定question和给定question+category两种设置下的EM分数差异。",
+        "compared_with": [
+          "H2"
+        ]
+      },
+      {
+        "prediction": "对于超出常见知识范畴的、极其冷门或虚构的问题，模型将难以给出正确答案。",
+        "suggested_test": "构造或寻找一些category已知但答案非常冷门的样本，观察模型的失败模式。",
+        "compared_with": [
+          "H4"
+        ]
+      }
+    ],
+    "falsification_conditions": [
+      "如果提供category信息对EM分数没有稳定且显著的提升，则该假设中‘category用于限定检索范围’的推断被削弱。",
+      "如果模型在处理明显超出其参数知识范围的合成问题时仍能给出高分，则任务可能更偏向于模式匹配而非真实知识检索。"
+    ],
+    "prior_confidence": 0.4
+  },
+  {
+    "id": "H2",
+    "task_type": "条件式文本生成",
+    "hypothesis": "核心任务是根据问题文本和其所属分类（category），生成一个最符合该分类下常见答案风格和内容的文本片段。输入是question和category，输出是生成的答案文本。category是强约束条件。",
+    "input_output_relation": "输入通过category定义了生成任务的领域和风格，question提供了具体内容线索，输出是在该领域约束下生成的文本。",
+    "execution_strategy": "将question和category作为联合上下文，提示模型作为一个该领域的专家，生成最可能的答案。",
+    "executor_instruction": "你是一个{category}领域的专家。根据以下问题线索，直接给出最可能的答案。",
+    "supporting_evidence": [
+      {
+        "statement": "category字段出现在valid_fields中，表明它是允许使用的输入信息，其多样性强烈暗示它对任务有指导作用。",
+        "observation_ids": [
+          "O2",
+          "O4"
+        ],
+        "evidence_strength": "medium"
+      },
+      {
+        "statement": "不同category下的问题风格和答案领域差异巨大（如从‘WORLD WAR I’到‘McDONALD'S SLOGANS’），模型需要根据category切换生成模式。",
+        "observation_ids": [
+          "O4"
+        ],
+        "evidence_strength": "medium"
+      }
+    ],
+    "assumptions": [
+      "模型能够理解并遵循category标签所隐含的领域知识约束和生成风格。"
+    ],
+    "uncertainties": [
+      "category与答案之间的具体关联规则是什么？是强关联还是弱提示？"
+    ],
+    "testable_predictions": [
+      {
+        "prediction": "当category标签被错误替换为无关类别时，模型生成的答案将明显偏离正确方向，且错误类型与新提供的错误类别相关。",
+        "suggested_test": "在测试集上，随机交换一批样本的category标签，观察模型输出答案是否更倾向于与错误category相关的主题。",
+        "compared_with": [
+          "H1",
+          "H3"
+        ]
+      },
+      {
+        "prediction": "模型在生成答案时，其用词和格式会与同一category下其他样本的答案风格保持一致。",
+        "suggested_test": "按category分组，分析模型生成的答案在词汇和句法上与同组标准答案的相似度是否显著高于跨组相似度。",
+        "compared_with": [
+          "H1"
+        ]
+      }
+    ],
+    "falsification_conditions": [
+      "如果错误替换category标签后，模型输出的变化没有统计学意义或与错误标签无关，则category作为强生成条件的假设被拒绝。",
+      "如果模型在忽略category时（仅输入question）的表现与使用正确category时无显著差异，则category的约束作用很弱，与该假设核心矛盾。"
+    ],
+    "prior_confidence": 0.3
+  },
+  {
+    "id": "H3",
+    "task_type": "指代消解与信息提取",
+    "hypothesis": "核心任务是识别问题文本中用于指代未知实体的词语（如this, these），并从上下文（可能隐含在问题或category中）提取出该指代词所指向的、最具体的信息作为答案。输入是指向性文本，输出是被指向实体的最简形式。",
+    "input_output_relation": "输入是包含指代关系的描述性文本，输出是该描述所指代的、满足约束的核心实体。",
+    "execution_strategy": "分析问题句子结构，定位核心指代对象（如‘this abortion pill’），结合问题中的其他修饰语（如‘NOW hailed’），提炼出唯一正确的实体名称。",
+    "executor_instruction": "分析问题，找出问题中用‘this/these’等词指代的具体事物或概念，直接输出该事物的名称。",
+    "supporting_evidence": [
+      {
+        "statement": "多数样本问题中包含明确的指代词（this, these），答案就是被指代的实体，如‘this abortion pill’ -> ‘RU-486’。",
+        "observation_ids": [
+          "O5"
+        ],
+        "evidence_strength": "strong"
+      },
+      {
+        "statement": "答案格式要求纯文本，且很多答案是单个名词或简短名词短语，符合提取核心指代对象的输出特征。",
+        "observation_ids": [
+          "O1",
+          "O3"
+        ],
+        "evidence_strength": "medium"
+      }
+    ],
+    "assumptions": [
+      "问题中的指代关系是明确的，且所需知识主要来自问题本身的语义，而非外部知识库。"
+    ],
+    "uncertainties": [
+      "对于没有明确指代词的问题（如‘3-word name for...’），任务理解是否仍一致？"
+    ],
+    "testable_predictions": [
+      {
+        "prediction": "通过改写问题，去掉指代词（如将‘this pill’改为‘RU-486’），问题将变得无意义或答案显而易见，模型的表现会随之变化。",
+        "suggested_test": "构造一组“指代消除”后的对比样本，观察模型输出是否仍然准确，或是否因为问题失去指代结构而产生混淆。",
+        "compared_with": [
+          "H1",
+          "H4"
+        ]
+      },
+      {
+        "prediction": "模型在回答时，应能准确识别出问题中的修饰语集合，并将其与指代对象匹配，而不是简单复制问题中的片段。",
+        "suggested_test": "检查模型对包含多个潜在修饰语（可能误导）的样本的回答准确率，看其是否能正确聚焦核心指代。",
+        "compared_with": [
+          "H4"
+        ]
+      }
+    ],
+    "falsification_conditions": [
+      "对于完全没有指代词的问题，如果模型的回答质量与有指代词的问题相比没有明显差异，则说明“指代消解”不是任务的核心机制。",
+      "如果模型在改写后的问题上表现变好（因为线索更直接），则原始任务可能不是纯粹的指代消解，而是更接近知识检索。"
+    ],
+    "prior_confidence": 0.2
+  },
+  {
+    "id": "H4",
+    "task_type": "结构化线索解读",
+    "hypothesis": "核心任务是解析问题文本中内嵌的结构化提示（如字数限制‘3-word name’、年份‘2003:’、特定格式‘I'm’ doing this’），并根据这些格式约束和语义内容共同推导出答案。输入是结构化的线索字符串，输出是满足所有约束的文本。",
+    "input_output_relation": "输入是包含多重约束（格式、长度、内容）的线索集，输出是唯一满足所有约束的解。",
+    "execution_strategy": "将问题文本解析为多个约束条件（如长度、内容、引用），然后寻找同时满足这些条件的实体或短语。",
+    "executor_instruction": "仔细分析问题中给出的所有线索，包括字数要求、格式提示、时间背景等。综合所有线索，给出最符合的精确答案。",
+    "supporting_evidence": [
+      {
+        "statement": "部分样本问题明确给出了非语义性的格式线索，如‘3-word name’和‘2003:’，答案严格符合这些格式（‘no man's land’是三个词）。",
+        "observation_ids": [
+          "O5"
+        ],
+        "answer_format_analysis": "has_newline_separator"
+      },
+      {
+        "statement": "问题样式被描述为“Jeopardy-style”，其特点正是通过一系列暗示性、条件性的线索来引出唯一答案。",
+        "source_type": "data_exploration",
+        "source_reference": "question_style"
+      }
+    ],
+    "assumptions": [
+      "问题中的格式和结构线索是关键且充分的，答案必须严格满足这些约束。"
+    ],
+    "uncertainties": [
+      "当语义线索与格式线索可能冲突时，优先级的规则是什么？"
+    ],
+    "testable_predictions": [
+      {
+        "prediction": "如果删除问题中的格式约束（如去掉‘3-word name’），答案空间会扩大，模型输出的不确定性增加，EM分数可能下降（因为可能生成其他合理但不符合原格式的答案）。",
+        "suggested_test": "在测试集上，对部分带有格式约束的问题进行“去约束”改写，对比模型在原版和改写版问题上的输出分布和性能变化。",
+        "compared_with": [
+          "H1",
+          "H3"
+        ]
+      },
+      {
+        "prediction": "对于没有明显格式约束的问题，模型的回答将更依赖于语义和知识，其性能模式可能与H1（知识检索）假设下的表现更相似。",
+        "suggested_test": "将测试集按“有无明显格式约束”进行划分，对比两类问题上模型使用的策略差异（如果可探测）或性能差异。",
+        "compared_with": [
+          "H1"
+        ]
+      }
+    ],
+    "falsification_conditions": [
+      "如果去除格式约束后，模型的回答质量没有变化或变得更差（例如，模型原本就忽略了格式），则“结构化线索解读”是核心任务的假设被强烈否定。",
+      "如果模型在回答明确格式约束的问题时，频繁输出违反格式的答案，可能说明模型未将格式视为强约束，或者任务本质不是解读这些约束。"
+    ],
+    "prior_confidence": 0.1
+  }
+]

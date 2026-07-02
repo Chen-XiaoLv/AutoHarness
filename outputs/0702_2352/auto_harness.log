@@ -1,0 +1,77 @@
+
+################################################################################
+# AutoHarness - Integrated System
+# Started at: 2026-07-02 23:52:58
+# Log file: E:\Tace项目\outputs\0702_2352\auto_harness.log
+[INIT] SkillOpt: E:\Tace项目\outputs\0702_2352\SkillOpt\skillopt.md
+# Output dir: E:\Tace项目\outputs\0702_2352
+################################################################################
+
+================================================================================
+Phase 0: Baseline Evaluation (baseline.md)
+================================================================================
+Excutor Baseline prompt: # Role
+回答问题，并在 <answer>...</answer> tags 中输出最终答案。
+
+---
+
+# rules
+## Skill
+No learned skills yet.
+
+
+
+---
+
+# Example
+
+
+---
+
+Now answer the following input:
+  Dataset: searchqa | dev_gate=215 | test_pool=215
+
+  Baseline Results:
+    Test EM: 56.28%  F1: 0.6494
+    Dev  EM: 54.88%  F1: 0.6359
+  Saved to: E:\Tace项目\outputs\0702_2352\start.jsonl
+
+[SKIP] Outer exploration skipped, using existing Contract
+
+[SKIP] A/B test skipped
+
+[Plan Agent] Round 1 — CONTINUE_SKILL_EVOLUTION (initial)
+
+================================================================================
+Phase 3: Inner Evolution Loop
+================================================================================
+[PROMPT] Agent system prompts saved to E:\Tace项目\outputs\0702_2352\prompt.md
+[INIT] Loaded 2000 from train (pool_size=2000)
+Dataset: searchqa | train_sample=300/2000 | dev_gate=215 | test_pool=215
+Config: max_total_edits=3, dev_decay_factor=0.85
+
+============================================================
+Initial Test Pool Evaluation
+============================================================
+[TEST] EM: 65.12% | F1: 0.7530 | Sub-EM: 80.47%
+[MEMORY] Loaded 1905 items from E:\Tace项目\data\searchqa\memory_set.jsonl
+[PROMPT] Round 1 Executor prompt appended to E:\Tace项目\outputs\0702_2352\prompt.md
+
+============================================================
+Round 1/1
+============================================================
+[SAMPLE] round_1: sampled 300/2000 from train_pool
+
+============================================================
+Train Pool Evaluation
+============================================================
+[TRAIN] 186/300 | EM: 62.00% | F1: 0.7369 | Sub-EM: 77.00%
+[CRITIC] Using all 114 bad cases
+  [CRITIC] 114 bad cases -> 8 minibatches (size=16)
+  [CRITIC] 8/8 batches produced valid reports
+critic_report -> E:\Tace项目\outputs\0702_2352\Critic\round_1.jsonl
+[AGGREGATE] 8 reports -> 3 unique edits (max=3)
+
+Evolving...
+evolution -> E:\Tace项目\outputs\0702_2352\Evolver\round_1.json
+  [CANDIDATE] Skill update_skill: skillopt -> E:\Tace项目\outputs\0702_2352\Candidates\round_1\Skills\skillopt.md

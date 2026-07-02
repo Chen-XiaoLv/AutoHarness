@@ -1,0 +1,10 @@
+2026-07-02 23:56:28,984 | INFO | Loop started: 0702_2356, n_rounds=1, dataset=searchqa, match_mode=text
+2026-07-02 23:56:28,984 | INFO | Splits: train_pool_full=2000, train_sample_size=300, dev_gate=215, test_pool=215
+2026-07-02 23:56:28,984 | INFO | [loop_start] loop=0702_2356 round=None agent=None case=None
+2026-07-02 23:58:18,937 | INFO | [test_eval] loop=0702_2356 round=0 agent=None case=None
+2026-07-02 23:58:18,958 | INFO | ======================================== Round 1/1 ========================================
+2026-07-02 23:58:18,967 | INFO | [round_start] loop=0702_2356 round=1 agent=None case=None
+2026-07-03 00:01:34,347 | INFO | [executor_done] loop=0702_2356 round=1 agent=executor case=None
+2026-07-03 00:02:43,464 | INFO | [critic_done] loop=0702_2356 round=1 agent=critic case=None
+2026-07-03 00:02:43,479 | INFO | [aggregate_done] loop=0702_2356 round=1 agent=None case=None
+2026-07-03 00:03:25,579 | INFO | [evolver_done] loop=0702_2356 round=1 agent=evolver case=None

@@ -1,0 +1,12 @@
+{"phase": "baseline", "test_em": 0.493, "test_f1": 0.6041, "dev_em": 0.5628, "dev_f1": 0.6404, "n_test": 215, "n_dev": 215}
+{"round": 1, "action": "CONTINUE_SKILL_EVOLUTION", "dev_em": 0.6605, "memory_em": 0.87}
+{"round": 2, "action": "RERUN_EVALUATION", "dev_em": 0.6698, "memory_em": 0.9}
+{"round": 3, "action": "CONTINUE_SKILL_EVOLUTION", "dev_em": 0.6512, "memory_em": 0.87}
+{"round": 4, "action": "CONTINUE_SKILL_EVOLUTION", "dev_em": 0.6744, "memory_em": 0.89}
+{"round": 5, "action": "ADD_OR_UPDATE_FEWSHOT", "dev_em": 0.7116, "memory_em": 0.92}
+{"round": 6, "action": "CONTINUE_SKILL_EVOLUTION", "dev_em": 0.707, "memory_em": 0.89}
+{"round": 7, "action": "RERUN_EVALUATION", "dev_em": 0.7256, "memory_em": 0.95}
+{"round": 8, "action": "CONTINUE_SKILL_EVOLUTION", "dev_em": 0.707, "memory_em": 0.95}
+{"round": 9, "action": "RERUN_EVALUATION", "dev_em": 0.6884, "memory_em": 0.93}
+{"round": 10, "action": "RERUN_EVALUATION", "dev_em": 0.7488, "memory_em": 0.93}
+{"round": 11, "action": "CONTINUE_SKILL_EVOLUTION", "dev_em": 0.693, "memory_em": 0.94}
