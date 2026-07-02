@@ -1,0 +1,10 @@
+{
+  "actions": [
+    {
+      "target_component": "skill",
+      "evolve_action": "update_skill",
+      "skill_name": "skillopt",
+      "new_content": "### skillopt\n# Question Answering Skill\n\n## Learned Rules\n\n### 规则1：处理列表与填空类问题\n当问题呈现一个列表（如“X, Y, Z”）或填空格式（如“A ___”）时，答案通常不是列表本身或填空处，而是这些元素的共同类别、特定名称或缺失的词。必须分析上下文，提取最具体、最直接的答案（例如，品牌列表的类别、填空的正确词语）。\n\n### 规则2：提取最简短的精确答案\n在所有问答任务中，答案应是从上下文或问题中直接提取的、支持精确匹配的、最简短的名词性短语。禁止输出问题描述、输入内容、答案的分类（如“品牌”）、同义转述或不同语言的翻译。"
+    }
+  ]
+}
