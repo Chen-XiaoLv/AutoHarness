@@ -6,3 +6,8 @@ streamlit>=1.28.0
 plotly>=5.18.0
 pyyaml>=6.0
 rich>=13.0.0
+streamlit
+pandas
+plotly
+numpy
+
