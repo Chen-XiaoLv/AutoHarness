@@ -237,7 +237,6 @@ st.markdown(
         Task Discover → Plan Agent → Skill Evolution → Few-shot Optimization → Gate
     </div>
     <div style="margin-top: 1rem;">
-        <span class="badge">🧠 Dataset: SearchQA</span>
         <span class="badge badge-purple">⚙️ Executor: mimo-v2.5</span>
         <span class="badge badge-green">🚦 Memory Gate: 70%</span>
     </div>
